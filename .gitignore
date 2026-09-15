@@ -1,0 +1,30 @@
+# Local migration records
+.migration/
+docs/migration.md
+.worktrees/
+
+# Credentials and environment
+.env
+.env.*
+!.env.example
+.config/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Editors and operating system
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Other generated files
+node_modules/
+*.log

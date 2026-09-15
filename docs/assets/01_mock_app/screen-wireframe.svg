@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" role="img" aria-labelledby="title desc">
+  <title id="title">完成画面のワイヤーフレーム</title>
+  <desc id="desc">上部にヘッダー、中央左にサイドバー、中央右にメイン画面、下部にフッターを配置し、メイン画面には入力フォームと結果表示領域を置く</desc>
+  <rect width="880" height="470" fill="#ffffff"/>
+  <g font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13.5" fill="#1f2328">
+    <!-- 外枠 -->
+    <rect x="20" y="20" width="840" height="430" rx="6" fill="#ffffff" stroke="#8c959f"/>
+    <line x1="20" y1="68" x2="860" y2="68" stroke="#8c959f"/>
+    <line x1="20" y1="400" x2="860" y2="400" stroke="#8c959f"/>
+    <line x1="260" y1="68" x2="260" y2="400" stroke="#8c959f"/>
+
+    <!-- ヘッダー -->
+    <text x="36" y="50">ヘッダー: アプリ名</text>
+
+    <!-- サイドバー -->
+    <text x="36" y="94" fill="#57606a">サイドバー</text>
+    <rect x="36" y="112" width="120" height="32" rx="4" fill="#eaeef2" stroke="#8c959f"/>
+    <text x="96" y="133" text-anchor="middle">新規作成</text>
+    <text x="36" y="180" fill="#57606a">履歴一覧</text>
+    <rect x="36" y="194" width="208" height="28" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="36" y="228" width="208" height="28" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+    <rect x="36" y="262" width="208" height="28" rx="4" fill="#f6f8fa" stroke="#d0d7de"/>
+    <text x="48" y="213">履歴項目</text>
+    <text x="48" y="247">履歴項目</text>
+    <text x="48" y="281">履歴項目</text>
+
+    <!-- メイン画面 -->
+    <text x="276" y="94" fill="#57606a">メイン画面</text>
+    <text x="276" y="128" fill="#57606a">入力フォーム</text>
+    <rect x="276" y="140" width="430" height="36" rx="4" fill="#f6f8fa" stroke="#8c959f"/>
+    <text x="290" y="163">プロンプト入力</text>
+    <rect x="706" y="140" width="138" height="36" rx="4" fill="#eaeef2" stroke="#8c959f"/>
+    <text x="724" y="163">送信</text>
+
+    <text x="276" y="210" fill="#57606a">結果表示領域</text>
+    <rect x="276" y="222" width="568" height="160" rx="4" fill="#ffffff" stroke="#d0d7de" stroke-dasharray="4 3"/>
+    <path d="M290 246 V360 M290 246 H302 M290 284 H302 M290 322 H302 M290 360 H302" fill="none" stroke="#8c959f"/>
+    <text x="310" y="250">タイトル</text>
+    <text x="310" y="288">集計結果</text>
+    <text x="310" y="326">要約</text>
+    <text x="310" y="364">実行した SQL</text>
+
+    <!-- フッター -->
+    <text x="36" y="429">フッター</text>
+
+    <!-- 対応する HTML の要素 -->
+    <g font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="11.5" fill="#57606a" text-anchor="end">
+      <text x="844" y="50">&lt;nav&gt;</text>
+      <text x="244" y="94">&lt;aside&gt;</text>
+      <text x="244" y="133">&lt;a&gt;</text>
+      <text x="244" y="180">&lt;nav&gt;</text>
+      <text x="236" y="213">&lt;li&gt;&lt;a&gt;</text>
+      <text x="236" y="247">&lt;li&gt;&lt;a&gt;</text>
+      <text x="236" y="281">&lt;li&gt;&lt;a&gt;</text>
+      <text x="844" y="94">&lt;main&gt;</text>
+      <text x="844" y="128">&lt;form&gt;</text>
+      <text x="696" y="163">&lt;input&gt;</text>
+      <text x="832" y="163">&lt;button&gt;</text>
+      <text x="844" y="210">&lt;div id="result"&gt;</text>
+      <text x="832" y="250">&lt;h3&gt;</text>
+      <text x="832" y="288">&lt;table&gt;</text>
+      <text x="832" y="326">&lt;p&gt;</text>
+      <text x="832" y="364">&lt;pre&gt;&lt;code&gt;</text>
+      <text x="844" y="429">&lt;footer&gt;</text>
+    </g>
+  </g>
+</svg>

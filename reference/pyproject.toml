@@ -1,0 +1,24 @@
+[project]
+name = "2026-summer-intern"
+version = "0.1.0"
+description = "自然言語データ分析アプリ (2026年サマーインターン)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.138.1",
+    "google-cloud-bigquery>=3.42.2",
+    "google-genai>=2.11.0",
+    "psycopg[binary]>=3.3.4",
+    "pydantic-settings>=2.14.2",
+    "sqlfluff>=4.2.2",
+    "sqlmodel>=0.0.39",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest]
+testpaths = ["tests"]
+pythonpath = ["."]

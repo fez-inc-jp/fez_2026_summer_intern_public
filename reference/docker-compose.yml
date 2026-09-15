@@ -1,0 +1,46 @@
+name: public-data-analysis-reference
+services:
+  app:
+    build: .
+    command:
+      [
+        "uv",
+        "run",
+        "--no-sync",
+        "fastapi",
+        "dev",
+        "app/main.py",
+        "--host",
+        "0.0.0.0",
+      ]
+    ports: ["127.0.0.1:8000:8000"]
+    volumes:
+      - "./:/app"
+      - "/app/.venv"
+      - "${HOME}/.config/gcloud:/root/.config/gcloud:ro"
+    environment:
+      DATABASE_URL: postgresql+psycopg://app:app@db:5432/app
+      BIGQUERY_PROJECT_ID: ${BIGQUERY_PROJECT_ID:?自分のプロジェクトIDを.envに設定してください}
+      BIGQUERY_LOCATION: ${BIGQUERY_LOCATION:-US}
+      GEMINI_PROJECT_ID: ${GEMINI_PROJECT_ID:?自分のプロジェクトIDを.envに設定してください}
+      GEMINI_LOCATION: ${GEMINI_LOCATION:-global}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.1-flash-lite}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes: ["db-data:/var/lib/postgresql"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d app -h 127.0.0.1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db-data:

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>自然言語からデータ取得デモ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body class="container-fluid">
+    <nav>
+      <ul>
+        <li><strong>自然言語からデータ取得デモ</strong></li>
+      </ul>
+    </nav>
+
+    <div class="layout">
+      <aside>
+        <a href="/" role="button" id="new-chat">＋ 新規作成</a>
+        <nav>
+          <ul></ul>
+        </nav>
+      </aside>
+      <main>
+        <!-- 入力フォーム -->
+        <form id="data-fetch-form">
+          <label for="prompt">プロンプト</label>
+          <fieldset role="group">
+            <input
+              type="text"
+              id="prompt"
+              name="prompt"
+              aria-describedby="invalid-helper"
+              placeholder="例: 2023年1月の貸出場所別の利用回数トップ3は？"
+            />
+            <button type="submit" id="prompt-submit">送信</button>
+          </fieldset>
+          <small id="invalid-helper" role="alert"></small>
+        </form>
+
+        <!-- 結果の表を書き込む場所 -->
+        <div id="result"></div>
+      </main>
+    </div>
+    <footer>
+      <small>FEZ Inc. — Summer Internship 2026</small>
+    </footer>
+    <!-- タイトル変更用のモーダル -->
+    <dialog id="title-dialog">
+      <article>
+        <header>
+          <button
+            type="button"
+            rel="prev"
+            aria-label="Close"
+            data-close
+          ></button>
+          <p><strong>タイトルを編集</strong></p>
+        </header>
+        <input type="text" id="title-input" name="title" />
+        <footer>
+          <button type="button" class="secondary" data-close>キャンセル</button>
+          <button type="button" id="title-save">保存</button>
+        </footer>
+      </article>
+    </dialog>
+    <!-- チャット削除用のモーダル -->
+    <dialog id="delete-dialog">
+      <article>
+        <header>
+          <button
+            type="button"
+            rel="prev"
+            aria-label="Close"
+            data-close
+          ></button>
+          <p><strong>チャットの削除</strong></p>
+        </header>
+        <p>このチャットを削除しますか？</p>
+        <footer>
+          <button type="button" class="secondary" data-close>キャンセル</button>
+          <button type="button" id="delete-submit">削除する</button>
+        </footer>
+      </article>
+    </dialog>
+  </body>
+</html>

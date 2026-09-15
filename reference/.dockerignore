@@ -1,0 +1,35 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- 環境変数 ---
+.env
+.env.*
+
+# --- Git / CI ---
+.git/
+.gitignore
+.github/
+
+# --- Docker ---
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# --- IDE / OS ---
+.vscode/
+.zed/
+.idea/
+.DS_Store
+*.swp
+
+# --- ドキュメント ---
+README.md
+*.md
+!app/knowledge/*.md
+!app/knowledge/**/*.md

@@ -1,0 +1,45 @@
+:root {
+  --pico-font-size: 87.5%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--pico-spacing);
+  height: 100dvh;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  min-height: 0;
+}
+.layout > aside,
+.layout > main {
+  overflow-y: auto; /* はみ出した分だけ各自スクロール */
+  min-height: 0; /* これが無いと Grid 子要素が縮まずスクロールしない */
+  padding-inline: var(--pico-spacing);
+}
+@media (max-width: 768px) {
+  body {
+    gap: var(--pico-spacing);
+    height: auto;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+/* 新規作成: ボタン風リンク。role=button のリンクは Pico の自動下マージンが
+   効かないため補い、サイドバー幅いっぱいのブロックにする */
+#new-chat {
+  display: block;
+  margin-bottom: var(--pico-spacing);
+}
+
+#prompt-submit {
+  white-space: nowrap;
+}
+
+#invalid-helper {
+  color: var(--pico-del-color);
+}

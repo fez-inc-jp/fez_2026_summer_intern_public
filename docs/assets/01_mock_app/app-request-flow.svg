@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+  <title id="title">画面表示と API 通信の流れ</title>
+  <desc id="desc">最初の画面表示では FastAPI アプリが public/ の HTML・CSS・JavaScript をブラウザへ配信し、画面表示後はブラウザの app.js が FastAPI アプリの /api/chat と JSON で通信する</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0969da"/>
+    </marker>
+  </defs>
+  <rect width="900" height="450" fill="#ffffff"/>
+  <g font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic',sans-serif" font-size="13.5" fill="#1f2328">
+
+    <!-- 1. 最初の画面表示 -->
+    <text x="24" y="30" font-size="14.5" font-weight="600">1. 最初の画面表示</text>
+
+    <rect x="24" y="48" width="250" height="150" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+    <text x="40" y="72" font-weight="600">FastAPI アプリ</text>
+    <line x1="24" y1="84" x2="274" y2="84" stroke="#d0d7de"/>
+    <text x="44" y="110" font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="12.5">public/</text>
+    <path d="M52 116 V168 M52 128 H68 M52 148 H68 M52 168 H68" fill="none" stroke="#8c959f"/>
+    <g font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="12.5">
+      <text x="72" y="132">index.html</text>
+      <text x="72" y="152">style.css</text>
+      <text x="72" y="172">app.js</text>
+    </g>
+
+    <rect x="700" y="98" width="160" height="50" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+    <text x="780" y="128" text-anchor="middle" font-weight="600">ブラウザ</text>
+
+    <line x1="278" y1="123" x2="694" y2="123" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="486" y="113" text-anchor="middle" font-size="12.5" fill="#0969da">HTML・CSS・JavaScript を配信</text>
+
+    <!-- 2. 画面表示後の API 通信 -->
+    <text x="24" y="262" font-size="14.5" font-weight="600">2. 画面表示後の API 通信</text>
+
+    <rect x="24" y="278" width="244" height="140" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+    <text x="40" y="302" font-weight="600">ブラウザ</text>
+    <line x1="24" y1="314" x2="268" y2="314" stroke="#d0d7de"/>
+    <text x="44" y="368" font-size="12.5">実行中の <tspan font-family="'SFMono-Regular',Menlo,Consolas,monospace">app.js</tspan></text>
+
+    <rect x="576" y="278" width="300" height="140" rx="6" fill="#f6f8fa" stroke="#8c959f"/>
+    <text x="592" y="302" font-weight="600">FastAPI アプリ</text>
+    <line x1="576" y1="314" x2="876" y2="314" stroke="#d0d7de"/>
+    <text x="596" y="338" font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="12.5">app/</text>
+    <path d="M604 344 V378 M604 356 H620 M604 378 H620" fill="none" stroke="#8c959f"/>
+    <text x="624" y="360" font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="12.5">schemas/</text>
+    <text x="696" y="360" font-size="12.5">API の入出力</text>
+    <text x="624" y="382" font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="12.5">api/</text>
+    <text x="696" y="382" font-size="12.5">API の処理</text>
+
+    <line x1="272" y1="330" x2="572" y2="330" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="422" y="320" text-anchor="middle" font-size="12.5" fill="#0969da">HTTP リクエスト</text>
+    <text x="422" y="348" text-anchor="middle" font-family="'SFMono-Regular',Menlo,Consolas,monospace" font-size="11.5" fill="#57606a">/api/chat・JSON</text>
+
+    <line x1="572" y1="376" x2="272" y2="376" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="422" y="396" text-anchor="middle" font-size="12.5" fill="#0969da">HTTP レスポンス</text>
+  </g>
+</svg>
